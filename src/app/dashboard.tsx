@@ -9,7 +9,7 @@ export default function App() {
     return(
        <View style={styles.container}>
         <Text style={styles.title}>Dashboard</Text>
-       <Button onPress={() => router.back } title="Voltar"/>
+       <Button onPress={() => router.back() } title="Voltar"/>
        </ View>
     )
 }
@@ -19,7 +19,8 @@ const styles = StyleSheet.create({
         flex:1,
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 32
+        padding: 32,
+        backgroundColor: "gray"
     },
     title: {
         fontSize:24,

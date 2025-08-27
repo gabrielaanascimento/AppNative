@@ -6,5 +6,9 @@ export const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         padding: 10
+    },
+    title: {
+        fontSize: 30,
+        fontWeight: "700"
     }
 })

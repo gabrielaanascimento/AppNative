@@ -3,22 +3,28 @@ import { Button } from "./components/Button"
 import { Input } from "./components/Input"
 import { styles } from "./styles"
 import { useState } from "react"
+import { useRouter } from "expo-router"
 
 export default function App() {
-    const [nome, setNome] = useState('')
+    const [name, setName] = useState('')
 
-    
+    const router = useRouter()
 
     return(
        <View style={styles.container}>
-        <Text>Olá, {nome}</Text>
-        <Input onChangeText={setNome} placeholder="Digite o Nome" />
+        <Text style={styles.title}>Olá, {name}</Text>
+        <Input onChangeText={setName} placeholder="Digite o Nome" />
        <Button onPress={() => {
-        if(nome.trim() === '') {
+        if(name.trim() !== '') {
+            router.push('/dashboard')
+        } else {
             alert("Digite o Nome")
         }
+        
        }}
         title="Dashboard"/>
+       
+       
        
        </ View>
     )
